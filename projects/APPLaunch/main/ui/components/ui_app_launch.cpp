@@ -21,6 +21,7 @@
 #include "ui_app_stock.hpp"
 #include "ui_app_tank_battle.hpp"
 #include "ui_app_racing.hpp"
+#include "ui_app_hikepod.hpp"
 
 // 前向声明
 class app_launch_S;
@@ -115,6 +116,9 @@ public:
 
         app_list.emplace_back("RACING",
                   "A:/dist/images/gmae.png", page_v<UIRacingPage>);
+
+        app_list.emplace_back("HIKEPOD",
+                  "A:/dist/images/hack.png", page_v<UIHikePodPage>);
 
 
 
@@ -254,7 +258,7 @@ public:
             if (indev)
                 lv_indev_set_group(indev, Screen1group);
             lv_disp_load_scr(ui_Screen1);
-            lv_obj_invalidate(lv_screen_active());
+            lv_obj_invalidate(ui_Screen1);
             lv_refr_now(disp);
         }
         else
